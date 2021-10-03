@@ -1,0 +1,38 @@
+@use 'resources/scss/abstract' as *;
+
+.modal-file {
+  align-items: center;
+  border-radius: 4px;
+  cursor: default;
+  display: flex;
+  margin: 0 6px;
+  padding: 6px 10px;
+  transition: .15s;
+
+  &:hover {
+    background-color: $background;
+  }
+
+  &__icon {
+    color: $dark-blue;
+    cursor: pointer;
+    margin: 0 10px 0 0;
+
+    @media screen and (max-width: $lg) {
+      font-size: 0.875rem;
+    }
+  }
+
+  &__size {
+    color: #6e6e6e;
+    font-size: 0.875rem;
+
+    @media screen and (max-width: $lg) {
+      font-size: unset;
+    }
+
+  }
+
+}
+
+

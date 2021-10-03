@@ -1,0 +1,95 @@
+@use 'resources/scss/abstract' as *;
+
+.conference-for-date {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px 0 0;
+  align-items: flex-start;
+
+  &__empty {
+    @extend %card;
+    font-size: 1.25rem;
+    text-align: center;
+    padding: 15px 20px;
+    flex-grow: 1;
+    align-self: flex-start;
+  }
+
+  &__body {
+    flex-grow: 1;
+    margin: 0 10px 0 0;
+  }
+
+  &__navigation {
+    position: sticky;
+    top: 10px;
+  }
+
+  &__refresh {
+    margin: 10px 0 0 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__spinner {
+    align-self: flex-start;
+    display: flex;
+    height: 50px;
+    width: 50px;
+  }
+
+  @media screen and (max-width: $lg) {
+    flex-direction: column;
+    padding: unset;
+    align-items: unset;
+
+    &__body,
+    &__empty {
+      order: 1;
+      margin: unset;
+    }
+
+    &__navigation {
+      position: unset;
+      margin: 0 0 10px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      align-self: flex-start;
+    }
+  }
+
+  @media screen and (max-width: $sm) {
+    &__empty {
+      align-self: unset;
+    }
+
+    &__navigation {
+      margin: 5px;
+      display: unset;
+      align-self: unset;
+    }
+
+    &__refresh {
+      display: none;
+    }
+  }
+}
+
+.calendar__day {
+  white-space: nowrap;
+  padding: 12px;
+  transition: background-color .1s;
+  flex-grow: 1;
+  text-align: center;
+
+  &--green {
+    background-color: $green-blue;
+    color: #fff;
+
+    &:hover {
+      background-color: $green-blue-hov;
+
+    }
+  }
+}

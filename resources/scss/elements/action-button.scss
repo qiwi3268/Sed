@@ -1,0 +1,76 @@
+@use 'resources/scss/abstract' as *;
+
+.action-button {
+  position: relative;
+  padding: 12px 15px;
+  font-size: 1.25rem;
+  color: $dark-green;
+  cursor: pointer;
+  transition: border .15s, background-color .15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+
+  @extend %card;
+
+  $ab: &;
+
+  &:hover {
+    background-color: $dark-green;
+    color: #fff;
+
+    #{$ab}__spinner {
+      :deep(.p-progress-spinner-circle) {
+        stroke: #fff !important;
+      }
+    }
+  }
+
+  @media screen and (max-width: $lg) {
+    font-size: 1.125rem;
+    padding: 7px 9px;
+  }
+
+  @media screen and (max-width: $md) {
+    font-size: 0.875rem;
+  }
+
+  &--red {
+    color: $remove;
+
+    &:hover {
+      background-color: $remove;
+    }
+  }
+
+  &--green {
+    color: #4A866E;
+
+    &:hover {
+      background-color: #4A866E;
+    }
+  }
+
+  &__spinner {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+  }
+
+  &__label,
+  &__value,
+  &__icon {
+    transition: color .15s;
+  }
+
+  &__label {
+    white-space: nowrap;
+  }
+
+  &__value {
+    display: flex;
+    align-items: center;
+  }
+
+}

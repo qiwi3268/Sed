@@ -1,0 +1,45 @@
+@use 'resources/scss/abstract' as *;
+
+.row-form {
+  @extend %card;
+  padding: 20px;
+
+  @media screen and (max-width: $md) {
+    padding: 15px;
+  }
+
+  @media screen and (max-width: $sm) {
+    padding: 10px;
+  }
+
+  .form-field,
+  .link-read {
+    &:not(&:last-child) {
+      padding: 0 0 20px 0;
+      margin: 0 0 20px 0;
+
+      @media screen and (max-width: $md) {
+        padding: 0 0 10px 0;
+        margin: 0 0 10px 0;
+      }
+
+    }
+
+  }
+
+  .link-read {
+    display: block;
+  }
+
+  .form-field {
+    &__label {
+      font-size: 1.125rem;
+      margin: 0 0 7px 0;
+
+      @media screen and (max-width: $md) {
+        font-size: 1.125rem;
+      }
+    }
+  }
+
+}

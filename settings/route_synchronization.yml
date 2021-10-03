@@ -1,0 +1,12 @@
+
+signatureSession.view: '/home/signatureSession/{uuid}'
+signatureSession.signing: '/home/signatureSession/{uuid}/signing'
+signatureSession.navigation.waitingAction: '/home/signatureSession/navigation/waitingAction'
+signatureSession.navigation.inWork: '/home/signatureSession/navigation/inWork'
+signatureSession.navigation.finished: '/home/signatureSession/navigation/finished'
+
+vacations: '/home/vacations'
+
+conferences.navigation.items.my.planned: '/home/conferences/navigation/items/my/planned'
+
+birthdays: '/home/birthdays'

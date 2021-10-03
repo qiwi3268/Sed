@@ -1,0 +1,83 @@
+@use 'resources/scss/abstract' as *;
+
+.session-read {
+
+  &__section,
+  &__block {
+    @extend %mb;
+  }
+
+  &__card {
+    @extend %card;
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (max-width: $md) {
+      margin: 0 0 5px 0;
+    }
+  }
+
+  &__header {
+    padding: 10px 20px;
+    font-size: 1.25rem;
+    text-align: center;
+    border-bottom: 2px solid $blue;
+  }
+
+  &__empty {
+    padding: 13px 20px;
+
+    text-align: center;
+    font-size: 1.375rem;
+    color: #BDC9D7;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  }
+
+  &__section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: flex-start;
+
+    @extend %gcg;
+
+    @media screen and (max-width: $md) {
+      grid-template-columns: 1fr;
+
+      .form-read__card {
+        &:not(&:last-child) {
+          margin: 0 0 7px 0;
+        }
+      }
+    }
+  }
+
+  .file-field__files {
+    border: 0;
+  }
+
+  .form-field {
+
+    &__label {
+      padding: 0 0 10px 0;
+      border-bottom: 1px solid $border;
+    }
+
+    &__action {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &__action-label {
+      font-size: 1.25rem;
+    }
+  }
+
+  .file-info__name {
+    font-size: 1.125rem;
+  }
+
+}

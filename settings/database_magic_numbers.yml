@@ -1,0 +1,14 @@
+# Статусы сессии подписания
+signature_session_statuses:
+  'В работе': 1
+  'Завершена': 2
+
+# Статусы подписывания сессии подписания
+signature_session_signer_statuses:
+  'Ожидает подписания': 1
+  'Подписано': 2
+
+# Статусы telegram опросов
+telegram_poll_statuses:
+  'Открыт': 1
+  'Закрыт': 2

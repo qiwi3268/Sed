@@ -1,0 +1,103 @@
+@use 'resources/scss/abstract' as *;
+
+.vacations {
+  &__category {
+
+    &:not(&:last-child) {
+      margin: 0 0 20px 0;
+    }
+
+    &--blue {
+      .vacation {
+        border-left: 3px solid $blue;
+
+        &__changed {
+          color: $icon-blue;
+          background-color: #E8EEF8;
+        }
+      }
+
+      .vacations__title {
+        background-color: #F5F8FB;
+        border-left: 3px solid $blue;
+      }
+    }
+
+    &--green {
+      .vacation {
+        border-left: 3px solid $valid;
+      }
+
+      .vacations__title {
+        background-color: #f9fbf7;
+        border-left: 3px solid $valid;
+      }
+    }
+
+    &--dark-green {
+      .vacation {
+        border-left: 3px solid #589493;
+
+        &__changed {
+          color: #589493;
+          background-color: #d9eeee;
+        }
+      }
+
+      .vacations__title {
+        background-color: #F3FAFA;
+        border-left: 3px solid #589493;
+      }
+    }
+  }
+
+  &__title {
+    @extend %card;
+    @extend %mb;
+
+    padding: 10px 20px;
+    font-size: 1.25rem;
+    font-weight: 700;
+    font-style: italic;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    @extend %grg;
+    @extend %gcg;
+
+    @media screen and (max-width: 1024px) {
+       grid-template-columns: 1fr 1fr;
+    }
+
+    @media screen and (max-width: 600px) {
+       grid-template-columns: 1fr;
+    }
+  }
+
+  &__item {
+    position: relative;
+    @extend %card;
+  }
+
+}
+
+.vacation {
+  display: flex;
+  justify-content: space-between;
+
+  &__sidebar {
+    margin: 0 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__changed {
+    margin: 10px 0 0 0;
+    padding: 7px;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+}

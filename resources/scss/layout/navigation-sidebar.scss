@@ -1,0 +1,68 @@
+@use 'resources/scss/abstract' as *;
+
+.navigation-sidebar {
+
+  position: sticky;
+  top: 10px;
+
+  margin: 0 10px 0 0;
+
+  @media screen and (max-width: $md) {
+    margin: 0 7px 0 0;
+  }
+
+  @media screen and (max-width: $sm) {
+    margin: 0 0 5px 0;
+  }
+
+  &__block {
+    @extend %card;
+    @extend %mb;
+  }
+
+  &__title {
+    padding: 12px 15px;
+    text-align: center;
+    border-bottom: 1px solid $border;
+    font-size: 1.25rem;
+
+    @media screen and (max-width: $lg) {
+      font-size: 1.125rem;
+      padding: 9px 12px;
+    }
+
+    @media screen and (max-width: $md) {
+      font-size: 1rem;
+      padding: 7px 9px;
+    }
+  }
+
+  &__create {
+    padding: 10px 15px;
+    font-size: 1.125rem;
+    width: 100%;
+    white-space: nowrap;
+    background-color: $green-blue;
+    color: #fff;
+    transition: background-color .15s;
+    text-align: center;
+    border-radius: 4px;
+
+    &:hover {
+      background-color: $green-blue-hov;
+    }
+
+    @media screen and (max-width: $md) {
+      font-size: unset;
+      padding: 7px 9px;
+    }
+
+  }
+
+  &__actions {
+    display: block;
+
+    @extend %mb;
+  }
+
+}

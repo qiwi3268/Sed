@@ -1,0 +1,30 @@
+@use 'resources/scss/abstract' as *;
+
+.sub-header {
+  @extend %mb;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__title {
+    @extend %h1;
+    @extend %card;
+    @extend %mr;
+    flex-grow: 1;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+
+    @media screen and (max-width: $md) {
+      padding: 10px 15px;
+    }
+
+    @media screen and (max-width: $sm) {
+      padding: 5px 10px;
+
+    }
+  }
+
+
+}

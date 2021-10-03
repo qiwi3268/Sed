@@ -1,0 +1,14 @@
+@use 'resources/scss/abstract' as *;
+
+.conference-view {
+  &__spinner {
+    @extend %center-spinner;
+  }
+
+  &__empty {
+    @extend %card;
+    font-size: 1.25rem;
+    text-align: center;
+    padding: 15px 20px;
+  }
+}

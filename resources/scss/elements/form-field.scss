@@ -1,0 +1,94 @@
+@use 'resources/scss/abstract' as *;
+
+.form-field {
+
+  $f: &;
+
+  .p-dropdown {
+    flex-grow: 1;
+  }
+
+  .p-inputtext,
+  .p-inputnumber,
+  .p-inputwrapper {
+    width: 100%;
+  }
+
+  &__options {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  &__error {
+    margin: 2px 0 0 0;
+    color: $error;
+    font-size: 0.75rem;
+  }
+
+  &.required &__label::after {
+    color: $error;
+    content: '*';
+  }
+
+  &__multiselect,
+  &__dropdown {
+    width: 100%;
+  }
+
+  &--filled {
+    #{$f}__row,
+    #{$f}__list {
+      color: $text;
+      background-color: #f8f9fa;
+    }
+  }
+
+  &--composite {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    @extend %gcg;
+
+  }
+
+  &.invalid {
+
+    .p-inputtext,
+    .p-multiselect,
+    .p-focus,
+    .p-inputwrapper-focus,
+    .p-component,
+    .p-inputwrapper,
+    .p-multiselect-chip,
+    .form-field__select
+    {
+
+      border-color: $invalid !important;
+      color: $error !important;
+
+      border-radius: 3px !important;
+
+      &:hover,
+      &:focus {
+        box-shadow: 0 0 0 3px $shadow-red !important;
+      }
+
+    }
+
+    // Отключает тень, когда элемент выделен и курсор не на нем
+    .p-multiselect:not(.p-disabled).p-focus,
+    // Инпут внутри дропдауна
+    .p-inputtext.p-dropdown-label
+    {
+      box-shadow: none !important;
+    }
+
+    .p-multiselect-label.p-placeholder,
+    .p-multiselect-trigger,
+    .p-dropdown-trigger {
+      color: $error !important;
+    }
+
+
+  }
+
+}

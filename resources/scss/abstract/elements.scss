@@ -1,0 +1,120 @@
+@use 'resources/scss/abstract/sizes' as *;
+@use 'resources/scss/abstract/colors' as *;
+
+%card {
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 1px 0 3px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+
+%field {
+  align-items: center;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  color: #737985;
+  display: flex;
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+%mb {
+  &:not(&:last-child) {
+    margin-bottom: 10px;
+
+    @media screen and (max-width: $md) {
+      margin-bottom: 7px;
+    }
+
+    @media screen and (max-width: $sm) {
+      margin-bottom: 5px;
+    }
+  }
+}
+
+%mr {
+  &:not(&:last-child) {
+    margin-right: 10px;
+
+    @media screen and (max-width: $md) {
+      margin-right: 7px;
+    }
+
+    @media screen and (max-width: $sm) {
+      margin-right: 5px;
+    }
+  }
+}
+
+%gcg {
+  grid-column-gap: 10px;
+
+  @media screen and (max-width: $md) {
+    grid-column-gap: 7px;
+  }
+
+  @media screen and (max-width: $sm) {
+    grid-column-gap: 5px;
+  }
+}
+
+%grg {
+  grid-row-gap: 10px;
+
+  @media screen and (max-width: $md) {
+    grid-row-gap: 7px;
+  }
+
+  @media screen and (max-width: $sm) {
+    grid-row-gap: 5px;
+  }
+}
+
+%h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: $dark-green;
+
+  @media screen and (max-width: $lg) {
+    font-size: 1.375rem;
+  }
+
+  @media screen and (max-width: $md) {
+    font-size: 1.25rem;
+  }
+
+}
+
+%center-spinner {
+  align-self: center;
+  display: flex;
+  height: 50px;
+  width: 50px;
+}
+
+%list-point {
+  margin: 0 5px 0 0;
+  font-size: 0.5rem;
+  color: $green-blue;
+}
+
+%navigation {
+  align-items: flex-start;
+  display: flex;
+
+  @media screen and (max-width: $sm) {
+    flex-direction: column;
+    align-items: unset;
+
+    .navigation-sidebar {
+      position: unset;
+
+      &__actions,
+      &__title,
+      .action-button {
+        font-size: 1.25rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,263 @@
+@use 'resources/scss/abstract' as *;
+@use 'resources/scss/null';
+
+@font-face {
+  font-family: 'Bebas Neue';
+  src: url('../js/assets/fonts/BebasNeue Bold.ttf');
+}
+
+@font-face {
+  font-family: 'Roboto Condensed';
+  src: url('../js/assets/fonts/RobotoCondensed-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-weight: 700;
+  src: url('../js/assets/fonts/RobotoCondensed-bold.ttf');
+}
+
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-weight: 300;
+  src: url('../js/assets/fonts/RobotoCondensed-Light.ttf');
+}
+
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-weight: 300;
+  font-style: italic;
+  src: url('../js/assets/fonts/RobotoCondensed-LightItalic.ttf');
+}
+
+@keyframes p-progress-spinner-color {
+  100%,
+  0% {
+    stroke: #fff !important;
+  }
+  40% {
+    stroke: #fff !important;
+  }
+  66% {
+    stroke: #fff !important;
+  }
+  80%,
+  90% {
+    stroke: #fff !important;
+  }
+}
+
+/*
+12px - 0.75rem
+14px - 0.875rem
+16px - 1rem
+18px - 1.125rem
+20px - 1.25rem
+22px - 1.375rem
+24px - 1.5
+*/
+
+html {
+
+  @media screen and (max-width: $lg) {
+    font-size: 15px;
+  }
+
+  @media screen and (max-width: $md) {
+    font-size: 14px;
+  }
+
+  @media screen and (max-width: $sm) {
+    font-size: 13px;
+  }
+
+  @media screen and (max-width: $xs) {
+    font-size: 12px;
+  }
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: $background;
+}
+
+button {
+  background-color: #fff;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+a {
+  color: $text;
+}
+
+#app {
+  color: $text;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Roboto Condensed', sans-serif;
+  min-height: 100%;
+  word-break: break-word;
+}
+
+.content {
+  max-width: 1655px;
+  align-self: center;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+
+  @extend %mb;
+
+  @media screen and (max-width: 1200px) {
+    padding: 0 5px;
+  }
+}
+
+.medium-wrapper {
+  max-width: 1200px;
+  align-self: center;
+  width: 100%;
+}
+
+.small-wrapper {
+  max-width: 800px;
+  align-self: center;
+  width: 100%;
+}
+
+.min-wrapper {
+  max-width: 600px;
+  align-self: center;
+  width: 100%;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C6C6C6;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #B0B0B0;
+}
+
+//PrimeVue styling===
+.p-ripple {
+  &--dark-green {
+    .p-ink {
+      background: rgba(39, 72, 80, 0.3);
+    }
+  }
+
+  &--blue {
+    .p-ink {
+      background: rgba(33, 150, 243, 0.3);
+    }
+  }
+}
+
+.p-button {
+  @media screen and (max-width: $md) {
+    padding: 0.4rem 0.7rem !important;
+  }
+
+  @media screen and (max-width: $sm) {
+    padding: 0.4rem 0.6rem !important;
+  }
+}
+
+.p-accordion-header-link:focus,
+.p-multiselect-item:focus {
+  box-shadow: none !important;
+}
+
+.p-multiselect-item,
+.p-multiselect-label,
+.p-dropdown-item,
+.p-dropdown-label {
+  white-space: unset !important;
+}
+
+.p-multiselect-panel,
+.p-dropdown-panel
+{
+  max-width: 900px !important;
+}
+
+.form-field {
+  .p-multiselect-token {
+    &:not(&:last-child) {
+      margin: 2px;
+    }
+  }
+}
+
+.p-component {
+  font-family: 'Roboto Condensed', sans-serif !important;
+}
+
+.p-inputtext {
+  font-family: 'Roboto Condensed', sans-serif !important;
+}
+
+.p-confirm-dialog {
+  max-width: 900px;
+}
+
+.p-dialog-mask.p-component-overlay {
+  z-index: 20 !important;
+}
+
+.p-dialog.p-component {
+  z-index: 30 !important;
+}
+
+.p-datepicker {
+  max-width: 600px !important;
+  min-width: unset !important;
+}
+
+.p-accordion .p-accordion-content {
+  padding: 0 !important;
+}
+
+//PrimeVue styling===
+
+// Для анимации появления модалок
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+  z-index: 50;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+// Для анимации появления модалок
+
+.p-progress-spinner-circle {
+  stroke: $dark-green !important;
+}
+
+.spinner {
+  &--primary {
+    .p-progress-spinner-circle {
+      stroke: #2196F3 !important;
+    }
+  }
+}
+
+

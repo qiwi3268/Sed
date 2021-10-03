@@ -1,0 +1,5 @@
+single_miscs:
+  - alias: 'conferenceForm'
+    class: 'App\Models\Miscs\Conferences\MiscConferenceForm'
+  - alias: 'conferenceLocation'
+    class: 'App\Models\Miscs\Conferences\MiscConferenceLocation'

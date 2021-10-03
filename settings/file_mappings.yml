@@ -1,0 +1,5 @@
+# Сессия подписания. Подписываемый файл
+m1m1m1:
+  rule: 'App\Services\Files\Uploading\Rules\SignatureSessionRule'
+  uploader: 'App\Services\Files\Uploading\Uploaders\SignatureSessionUploader'
+  entity: 'App\Models\SignatureSessions\SignatureSession'

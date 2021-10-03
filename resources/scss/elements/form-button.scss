@@ -1,0 +1,32 @@
+@use 'resources/scss/abstract' as *;
+
+.form-button {
+  border: 1px solid $grey;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  //font-size: 0.875rem;
+  justify-content: space-between;
+  text-align: center;
+  transition: .10s;
+
+  &:hover {
+    border-color: $active-blue;
+    box-shadow: 0 0 0 3px $shadow-blue;
+  }
+
+  &__icon {
+    color: $icon-blue;
+    margin: 0 0 0 10px;
+  }
+
+  &.save &__icon {
+    color: $valid;
+  }
+
+  &.remove &__icon {
+    color: $remove;
+  }
+
+}

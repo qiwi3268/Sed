@@ -1,0 +1,164 @@
+@use 'resources/scss/abstract' as *;
+
+.card-view {
+
+  &__spinner {
+    @extend %center-spinner;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+
+    @media screen and (max-width: 1024px) {
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 10px;
+    }
+
+    @media screen and (max-width: 600px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__item {
+    @extend %mb;
+  }
+}
+
+.session-card {
+  @extend %card;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: background-color .15s;
+  position: relative;
+
+  @media screen and (max-width: $md) {
+    font-size: 0.875rem;
+  }
+
+  @media screen and (max-width: $sm) {
+    font-size: 0.75rem;
+  }
+
+  &__header {
+    font-weight: 700;
+    border-bottom: 2px solid $blue;
+  }
+
+  &__header,
+  &__body {
+    padding: 10px 20px;
+
+    @media screen and (max-width: $md) {
+      padding: 8px 15px;
+    }
+
+    @media screen and (max-width: $sm) {
+      padding: 5px 7px;
+    }
+  }
+
+  &__body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__author {
+    margin: 0 0 5px 0;
+    display: flex;
+    align-items: center;
+  }
+
+  &__date {
+    display: flex;
+  }
+
+  &__signers {
+    margin: 0 0 10px 0;
+  }
+
+  &__signer {
+    display: flex;
+    align-items: center;
+
+    &:not(&:last-child) {
+      margin: 0 0 7px 0;
+    }
+
+    .session-card__icon {
+      color: #D58F8F;
+
+      &.valid {
+        color: $valid-text;
+      }
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  &__info {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  &__icon {
+    color: $icon-blue;
+    margin: 0 7px 0 0;
+
+    @media screen and (max-width: $md) {
+      margin: 0 5px 0 0;
+    }
+  }
+
+  &__status {
+    border-radius: 4px;
+    padding: 7px;
+    background-color: $shadow-blue;
+
+    @media screen and (max-width: $md) {
+      padding: 5px;
+    }
+
+    @media screen and (max-width: $sm) {
+      padding: 4px;
+    }
+
+    &.valid {
+      background-color: $background-green;
+    }
+  }
+
+  &__value,
+  &__label,
+  &__status {
+    white-space: nowrap;
+  }
+
+  &__col {
+    &:not(&:last-child) {
+      margin: 0 25px 0 0;
+
+      @media screen and (max-width: $lg) {
+        margin: 0 15px 0 0;
+      }
+
+      @media screen and (max-width: $md) {
+        margin: 0 10px 0 0;
+      }
+
+      @media screen and (max-width: $sm) {
+        margin: 0 7px 0 0;
+      }
+    }
+  }
+
+}

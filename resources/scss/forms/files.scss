@@ -1,0 +1,41 @@
+@use 'resources/scss/abstract' as *;
+
+.files {
+  &__item {
+    align-items: center;
+    display: flex;
+    padding: 3px;
+  }
+
+  &__actions {
+    display: flex;
+    margin: 0 0 0 3px
+  }
+
+  &__download {
+    &:not(&:last-child) {
+      margin: 0 5px 0 0;
+    }
+  }
+
+  &__remove {
+    padding: 8px;
+  }
+
+  &__action {
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 5px;
+    transition: background-color 0.15s;
+
+    &--remove {
+      color: $remove;
+
+      &:hover {
+        background-color: $shadow-red;
+        color: $remove;
+      }
+    }
+  }
+
+}

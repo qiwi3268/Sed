@@ -1,0 +1,192 @@
+@use 'resources/scss/abstract' as *;
+
+.conference-card {
+  @extend %card;
+  @extend %mb;
+  position: relative;
+  display: block;
+
+  &:hover {
+    .conference-card__link {
+      box-shadow: 0 0 4px 3px rgb(186 211 231);
+      &:hover {
+        box-shadow: unset;
+      }
+    }
+  }
+
+  &__header {
+    padding: 10px 20px;
+    border-bottom: 3px solid $blue;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    font-size: 1.125rem;
+  }
+
+  &__topic {
+    margin: 0 10px 0 0;
+    font-weight: 700;
+  }
+
+  &__date {
+    white-space: nowrap;
+  }
+
+  &__body {
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__actions {
+    display: flex;
+    flex-grow: 1;
+    align-items: flex-end;
+    justify-content: flex-start;
+    flex-direction: column;
+  }
+
+  &__link {
+    z-index: 1;
+    border-radius: 4px;
+    transition: box-shadow .15s;
+    &:hover {
+      box-shadow: unset;
+    }
+  }
+
+  &__status {
+    border-right: 3px solid $valid-text;
+    background-color: #ecfaea;
+    border-radius: 3px 0 0 3px;
+    padding: 10px;
+
+    &--filled {
+      border-right: 3px solid $blue;
+      background-color: #eff4fa;
+    }
+  }
+
+  &__main {
+    display: flex;
+    justify-content: space-between;
+    white-space: nowrap;
+
+    &:not(&:last-child) {
+      border-bottom: 1px solid $border;
+      padding: 0 0 10px 0;
+    }
+  }
+
+  &__info {
+    display: flex;
+  }
+
+  &__col {
+    margin: 0 30px 0 0;
+
+    .conference-card {
+      &__label {
+        border-bottom: 1px solid $border;
+        padding: 0 0 5px 0;
+        margin: 0 0 5px 0;
+      }
+    }
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+
+    margin: 10px 0 0 0;
+
+    &:not(&:last-child) {
+      padding: 0 0 10px 0;
+      border-bottom: 1px solid $border;
+    }
+
+  }
+
+  &__label {
+    font-weight: 300;
+    margin: 0 10px 0 0;
+    white-space: nowrap;
+  }
+
+  @media screen and (max-width: 1024px) {
+    &__header {
+      padding: 5px 10px;
+    }
+
+    &__body {
+      padding: 6px 8px;
+    }
+
+    &__label {
+      margin: 0 5px 0 0;
+      font-size: 0.875rem;
+      white-space: unset;
+      word-break: normal;
+    }
+
+    &__main {
+      display: unset;
+      position: relative;
+
+      &:not(&:last-child) {
+        padding: 0 0 5px 0;
+      }
+    }
+
+    &__info {
+      flex-direction: column;
+    }
+
+    &__row {
+      margin: 5px 0 0 0;
+      &:not(&:last-child) {
+        padding: 0 0 5px 0;
+      }
+    }
+
+    &__col {
+      display: flex;
+      align-items: center;
+
+      margin: 5px 0 0 0;
+      &:not(&:last-child) {
+        padding: 0 0 5px 0;
+        border-bottom: 1px solid $border;
+      }
+
+      .conference-card {
+        &__label {
+          border-bottom: unset;
+          padding: unset;
+          margin: 0 5px 0 0;
+
+          &:after {
+            content: ':'
+          }
+        }
+      }
+    }
+
+    &__actions {
+      align-items: center;
+      justify-content: flex-end;
+      flex-direction: row;
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 5px 0 5px 10px;
+      background-color: #fff;
+    }
+
+    &__status {
+      padding: 7px;
+    }
+  }
+}
